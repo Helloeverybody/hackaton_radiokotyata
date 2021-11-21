@@ -1,12 +1,17 @@
 button {
-  display: inline-block;
-  background: #7fa6c4;
-  color: #fff;
+  display: block;
+  background: #dadabd;
+  color: #2d2f3a;
   padding: 12px;
-  border-radius: 3px;
   text-decoration: none;
   font-family: Tahoma;
   font-size: 18px;
   line-height: 1;
-  font-weight: 100;
+  font-weight: 50;
+  width: 100%;
+}
+
+.button:hover {
+    background-color: #d9d9bc;
+    color: white;
 }

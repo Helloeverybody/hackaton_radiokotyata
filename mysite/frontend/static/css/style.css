@@ -1,12 +1,59 @@
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 10px;
+}
+
+li{
+    margin: 2px;
+}
+
+body{
+    margin: 0;
+}
+
+.header_title{
+    margin: 0;
+    font-family: "Bahnschrift Condensed";
+    font-size: 40px;
+    text-align: center;
+    padding: 12px;
+}
+
 .sidebar{
-    display: grid;
-    grid-template-columns: 1fr 4fr;
+    display: flex;
+    justify-content: left;
+    height: 100%;
+    flex-basis: min-content;
+    vertical-align: top;
 }
 
 .sidebar-right{
-    background-color: #68bbcc;
+    background-color: #ffffff;
+    width: 80%;
 }
 
 .sidebar-left{
-    background-color: #68cc93;
+    background-color: #898c8c;
+    width: 20%;
+}
+
+.header{
+    width: 100%;
+	background: #D8E3AB;
+	height: 70px;
+}
+
+.sidebar_title{
+    text-align: center;
+    font-family: "Bahnschrift Light";
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.services{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: 600px;
 }

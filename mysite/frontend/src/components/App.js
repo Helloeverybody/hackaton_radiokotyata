@@ -8,7 +8,9 @@ class App extends Component {
     this.state = {
       data: [],
       loaded: false,
-      placeholder: "Loading"
+      placeholder: "Loading",
+      activeServiceId: null,
+        allServices: [],
     };
   }
 
@@ -32,34 +34,43 @@ class App extends Component {
       });
   }
 
-  handleClick(){
-
+  handleClick(id){
+    this.state = {
+      activeServiceId: id,
+    }
   }
 
   render() {
     return (
       <ul>
         {this.state.data.map(contact => {
-          return (
-            <Service id={contact.id}
+            let service = <Service id={contact.id}
                      name={contact.name}
-                     ref={contact.ref}
-                     onClick={() => {this.handleClick()}}/>
-          );
+                     ref={contact.refer}
+                     onClick={() => this.handleClick(contact.id)}/>
+            this.state.allServices.push(service);
+          return (service);
         })}
       </ul>
     );
   }
 }
 
-function Service(props) {
-    return (
-        <button className="service" onClick={props.onClick}>
-            <li key={props.id}>
-              {props.name}: {props.ref}
-            </li>
-        </button>
-    );
+class Service extends Component {
+    constructor(props) {
+        super(props);
+        this.id = props.id
+        this.name = props.name
+        this.refer = props.refer
+        this.onClick = props.onClick
+    }
+    render() {
+        return <li key={this.id}>
+                  <button className="service" onClick={this.onClick}>
+                    {this.name} {this.refer}
+                  </button>
+                </li>
+    }
 }
 
 export default App;
