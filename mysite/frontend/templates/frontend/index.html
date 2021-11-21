@@ -3,12 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Django REST with React</title>
+  <title>Лаунчер сервисов</title>
+    <link rel="stylesheet" href="static/css/style.css">
 </head>
 <body>
-<div id="app">
-    <!-- React will load here -->
+<header>
+    <h1>Лаунчер</h1>
+</header>
+<div class="sidebar">
+    <div class="sidebar-left">
+        <h1>Сервисы</h1>
+        <div id="app">
+        </div>
+    </div>
+    <div class="sidebar-right">
+        <h1>ХОХЛЫ!</h1>
+    </div>
 </div>
+
+
 </body>
 {% load static %}
 <script src='{% static "frontend/main.js/main.js" %}'></script>

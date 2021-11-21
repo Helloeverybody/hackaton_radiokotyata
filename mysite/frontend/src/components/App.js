@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import { render } from "react-dom";
+import React, {Component} from 'react';
+import {render} from "react-dom";
+import './list-style.css';
 
 class App extends Component {
   constructor(props) {
@@ -31,19 +32,34 @@ class App extends Component {
       });
   }
 
+  handleClick(){
+
+  }
+
   render() {
     return (
       <ul>
         {this.state.data.map(contact => {
           return (
-            <li key={contact.id}>
-              {contact.name} - {contact.email}
-            </li>
+            <Service id={contact.id}
+                     name={contact.name}
+                     ref={contact.ref}
+                     onClick={() => {this.handleClick()}}/>
           );
         })}
       </ul>
     );
   }
+}
+
+function Service(props) {
+    return (
+        <button className="service" onClick={props.onClick}>
+            <li key={props.id}>
+              {props.name}: {props.ref}
+            </li>
+        </button>
+    );
 }
 
 export default App;

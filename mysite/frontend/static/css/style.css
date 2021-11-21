@@ -1,0 +1,12 @@
+.sidebar{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.sidebar-right{
+    background-color: #68bbcc;
+}
+
+.sidebar-left{
+    background-color: #68cc93;
+}
